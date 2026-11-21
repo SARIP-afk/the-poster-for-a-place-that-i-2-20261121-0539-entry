@@ -19,7 +19,8 @@ first sees it.
 `main.py` (Python 3.13, standard library only) copies `entry.png` —
 the finished 1024×1024 poster, drawn beforehand by an offline script —
 to `/output/entry.png`, after checking it is a valid 8-bit RGB PNG no
-larger than 1 MiB. It uses no network, no randomness and no clock, so
+larger than 1 MiB. If the PNG is absent it delivers the `entry.jpg`
+fallback the same way, validating its JPEG markers and size first. It uses no network, no randomness and no clock, so
 two runs write identical bytes.
 
 The poster itself was built by `build_poster.py` (in the build folder):
